@@ -27,7 +27,6 @@ int main()
     {
         mas3[i] = (mas1[i] + mas2[i]) % 10 + ost;
         ost = (mas1[i] + mas2[i]) / 10;
-        //std::cout<< i<< " " <<mas1[i] << " " <<mas2[i] << " "<< mas3[i] << std::endl;
     }
 
     std::cout << std::endl;
@@ -65,11 +64,17 @@ int main()
     }
     while (d[dl - 1] == 0)
     {
+        if ((d[dl-1] == d[0])  & (d[0] == 0))
+        {
+            if (dl==1)
+                break;
+        }
         dl--;
     }
     for (int i = 0; i < dl / 2; i++)
         std::swap(d[i], d[dl - i - 1]);
     std::cout << "Multiplication:";
+
     for (int i = 0; i < dl; i++)
         std::cout << d[i];
     std::cout << std::endl;
