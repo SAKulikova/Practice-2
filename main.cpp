@@ -47,8 +47,13 @@ int main()
             mas3[i] = mas3[i + 1];
     }
     std::cout << "Summa:";
-    for (int i = 0; i < t; i++)
-        std::cout << mas3[i];
+    if (A=="0" & B=="0"){
+        std::cout<<0;
+    }
+    else{
+        for (int i = 0; i < t; i++)
+            std::cout << mas3[i];
+    }
     std::cout<<std::endl;
 
     int dl = size(A) + size(B) + 1;
@@ -64,10 +69,9 @@ int main()
     }
     while (d[dl - 1] == 0)
     {
-        if ((d[dl-1] == d[0])  & (d[0] == 0))
+        if ((dl == 1)  & (d[0] == 0))
         {
-            if (dl==1)
-                break;
+            break;
         }
         dl--;
     }
